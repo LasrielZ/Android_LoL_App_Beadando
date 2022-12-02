@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        String[] servers = new String[] {"EUNE", "EUW", "NA"};
+        String[] servers = new String[] {"eun1", "euw1", "na1"};
         final ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line,
                 servers);
@@ -49,33 +49,11 @@ public class HomeFragment extends Fragment {
         Button button = view.findViewById(R.id.btnSearch);
         TextInputLayout textInputLayout = view.findViewById(R.id.txtInputLayout);
         AutoCompleteTextView autoCompleteTextView1 = view.findViewById(R.id.autoCompleteTxtView);
-        /*button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText editText = view.findViewById(R.id.edtTxtView);
 
-                TextInputLayout textInputLayout = view.findViewById(R.id.txtInputLayout);
-                AutoCompleteTextView autoCompleteTextView1 = view.findViewById(R.id.autoCompleteTxtView);
-
-                Bundle result = new Bundle();
-                result.putString("df1",editText.getText().toString());
-
-                result.putString("df2", autoCompleteTextView1.getText().toString());
-
-                getParentFragmentManager().setFragmentResult("dataFrom1",result);
-                editText.setText("");
-
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_layout, new SummonerInfoFragment());
-                fragmentTransaction.commit();
-            }
-        });
-
-        return view;
-    }*/
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getActivity(), SummInfo_Activity.class);
                 intent.putExtra("SERVERCHOICE", autoCompleteTextView1.getText().toString());
                 intent.putExtra("NAMEDATA", editText.getText().toString());

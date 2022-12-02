@@ -1,5 +1,7 @@
 package hu.leagueoflegends.android_api_app_beadando.summinfo;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 
 import retrofit2.Call;
@@ -9,21 +11,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AdapterForSumm {
 
+    private static final String TAG = "AdapterForSumm";
+
     String summonerNames;
-    String serverDatas;
 
     public void setSummonerNames(String summonerNames) {
         this.summonerNames = summonerNames;
     }
 
-    public void setServerDatas(String serverDatas) {
-        this.serverDatas = serverDatas;
-    }
+    private String BASE_URL;
+    private Retrofit retrofit;
 
-    private final String BASE_URL = "https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
-    private final Retrofit retrofit;
-
-    public AdapterForSumm(){
+    public AdapterForSumm(String serverchoice){
+        this.BASE_URL = "https://" + serverchoice + ".api.riotgames.com/lol/summoner/v4/summoners/by-name/";
         this.retrofit = buildRetrofitSumm();
     }
 

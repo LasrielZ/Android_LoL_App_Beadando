@@ -35,8 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:hint="Servers"
             android:inputType="none"
-            android:text="EUNE" />
+            android:text="eun1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
