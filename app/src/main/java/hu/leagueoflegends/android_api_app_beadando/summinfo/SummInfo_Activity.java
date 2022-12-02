@@ -30,8 +30,6 @@ public class SummInfo_Activity extends AppCompatActivity {
     String summNamesData;
     String serverChoiceData;
 
-    //TextView imgCode;
-
     private AdapterForSumm adapterForSumm;
 
     @Override
@@ -40,8 +38,7 @@ public class SummInfo_Activity extends AppCompatActivity {
 
         setContentView(R.layout.summ_info_activity_layout);
 
-        adapterForSumm = new AdapterForSumm();
-
+        adapterForSumm = new AdapterForSumm(getIntent().getStringExtra("SERVERCHOICE"));
 
         txtSummName = findViewById(R.id.SummName_textView);
         txtSummLvl = findViewById(R.id.SummLvl_textView);
@@ -54,8 +51,6 @@ public class SummInfo_Activity extends AppCompatActivity {
 
         summNamesData = getIntent().getStringExtra("NAMEDATA");
         adapterForSumm.setSummonerNames(summNamesData);
-
-        adapterForSumm.setServerDatas("eun1");
 
     }
 
