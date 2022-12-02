@@ -6,156 +6,178 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/MostPlayed_imageView"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:src="@drawable/ic_launcher_background"
+        android:id="@+id/RankedBG_imageView"
+        android:layout_width="616dp"
+        android:layout_height="908dp"
+        android:background="#818181"
+        android:src="@drawable/assassin"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.506" />
 
     <ImageView
         android:id="@+id/SummIcon_imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_marginTop="16dp"
+        android:background="#92D8D8D8"
         android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/SummName_textView"
-        android:layout_width="284dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:text="Summoner_Name"
-        android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/SummIcon_imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/SummLvl_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="196dp"
+        android:layout_height="36dp"
         android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20"
         android:text="Summoner_Level"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/SummName_textView"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SummName_textView" />
 
     <TextView
         android:id="@+id/SummServer_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="80dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="10"
         android:text="Server"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/SummLvl_textView"
-        app:layout_constraintTop_toBottomOf="@+id/SummLvl_textView" />
-
-    <ImageView
-        android:id="@+id/RankedBG_imageView"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:background="#818181"
-        android:src="@drawable/ic_launcher_background"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MostPlayed_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/SummLvl_textView" />
 
     <TextView
         android:id="@+id/SoloQ_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="138dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
         android:text="Solo Queue:"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/RankedBG_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/RankedInfo_textView" />
 
     <TextView
         android:id="@+id/FlexQ_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="129dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="104dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
         android:text="Flex Queue:"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/SoloQ_textView"
         app:layout_constraintTop_toBottomOf="@+id/SoloQ_textView" />
-
-    <ImageView
-        android:id="@+id/MatchHistoryBG_imageView"
-        android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:background="#FF9090"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RankedBG_imageView" />
-
-    <TextView
-        android:id="@+id/MatchH_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Match History"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/MatchHistoryBG_imageView" />
 
     <ImageView
         android:id="@+id/SoloIcon_imageView"
         android:layout_width="48dp"
         android:layout_height="43dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintStart_toEndOf="@+id/SoloQ_textView"
-        app:layout_constraintTop_toBottomOf="@+id/MostPlayed_imageView" />
+        app:layout_constraintStart_toStartOf="@+id/SoloQ_textView"
+        app:layout_constraintTop_toBottomOf="@+id/SoloQ_textView" />
 
     <ImageView
         android:id="@+id/flexIcon_imageView"
         android:layout_width="50dp"
         android:layout_height="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintStart_toStartOf="@+id/SoloIcon_imageView"
-        app:layout_constraintTop_toBottomOf="@+id/SoloIcon_imageView" />
+        app:layout_constraintStart_toStartOf="@+id/FlexQ_textView"
+        app:layout_constraintTop_toBottomOf="@+id/FlexQ_textView" />
 
     <TextView
         android:id="@+id/SoloPlacement_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="132dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
         android:text="Challenger 01"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/SoloIcon_imageView"
-        app:layout_constraintTop_toTopOf="@+id/SoloQ_textView" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/SoloQ_textView"
+        app:layout_constraintTop_toBottomOf="@+id/SoloQ_textView" />
 
     <TextView
         android:id="@+id/FlexPlacement_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="152dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
         android:text="GrandMaster 01"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/flexIcon_imageView"
-        app:layout_constraintTop_toTopOf="@+id/FlexQ_textView" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/FlexQ_textView"
+        app:layout_constraintTop_toBottomOf="@+id/FlexQ_textView" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/MatchHistory_RV"
-        android:layout_width="409dp"
-        android:layout_height="304dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/SummName_textView"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="20"
+        android:text="Summoner_Name"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SummIcon_imageView" />
+
+    <TextView
+        android:id="@+id/RankedInfo_textView"
+        android:layout_width="300dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
+        android:text="Ranked Placement"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MatchHistoryBG_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/SummServer_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

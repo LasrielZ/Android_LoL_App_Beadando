@@ -3,6 +3,8 @@ package hu.leagueoflegends.android_api_app_beadando.summinfo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +37,7 @@ public class SummInfo_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.summ_info_activity_layout);
 
         adapterForSumm = new AdapterForSumm();
