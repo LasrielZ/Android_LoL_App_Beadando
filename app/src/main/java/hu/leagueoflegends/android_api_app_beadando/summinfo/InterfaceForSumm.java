@@ -11,6 +11,6 @@ public interface InterfaceForSumm {
 //https://eun1.api.riotgames.com/lol/summoner/v4/
 //        summoners/by-name/AsrielHUN?api_key=RGAPI-93891ff8-dbea-4061-8932-d0a5fb1b51a8
 
-    @GET("{summname}?api_key=RGAPI-87a01512-0b51-4460-950d-723e42f5ae99")
+    @GET("{summname}?api_key=RGAPI-6376bc02-0d61-4f76-8162-bd1a6ac9e82c")
     Call<ModelForSumm> getDataForSumm(@Path("summname") String SummName);
 }

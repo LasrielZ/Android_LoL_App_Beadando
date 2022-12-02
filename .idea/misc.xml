@@ -1,33 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/layout/dropdown_item.xml" value="0.67" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/layout/fragment_champions.xml" value="0.5" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/layout/fragment_home.xml" value="0.33" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/layout/fragment_quiz.xml" value="0.33" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/layout/fragment_summoner_info.xml" value="0.3625" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/layout/list_item.xml" value="0.1" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Android_API_App_Beadando/app/src/main/res/menu/button_nav_menu.xml" value="0.1" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/CompleteChampDetails(Mukodo_API_RecyclerView_ChampNames(Folytatas_Main))/app/src/main/res/layout/example_activity.xml" value="0.10648148148148148" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/CompleteChampDetails(Mukodo_API_RecyclerView_ChampNames(Folytatas_Main))/app/src/main/res/layout/fragment_example.xml" value="0.3625" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/CompleteChampDetails(Mukodo_API_RecyclerView_ChampNames(Folytatas_Main))/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/CompleteChampDetails(Mukodo_API_RecyclerView_ChampNames(Folytatas_Main))/app/src/main/res/layout/fragment_summoner_info.xml" value="0.11438679245283019" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/CompleteChampDetails(Mukodo_API_RecyclerView_ChampNames(Folytatas_Main))/app/src/main/res/layout/list_item.xml" value="0.25" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/CompleteChampDetails(Mukodo_API_RecyclerView_ChampNames(Folytatas_Main))/app/src/main/res/layout/summ_info_activity_layout.xml" value="0.33" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/CompleteChampDetails(Mukodo_API_RecyclerView_ChampNames(Folytatas_Main))/app/src/main/res/layout/summ_info_layout.xml" value="0.25" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Folytatas/app/src/main/res/layout/fragment_champions.xml" value="0.2" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Folytatas/app/src/main/res/layout/fragment_summoner_info.xml" value="0.2703125" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Folytatas_Main/app/src/main/res/layout/champion_item.xml" value="0.33" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Folytatas_Main/app/src/main/res/layout/fragment_champions.xml" value="0.33" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Mukodo_API_RecyclerView_ChampNames(Folytatas_Main)/app/src/main/res/layout/champion_item.xml" value="0.30833333333333335" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Mukodo_API_RecyclerView_ChampNames(Folytatas_Main)/app/src/main/res/layout/example_activity.xml" value="0.33" />
-        <entry key="..\:/Users/mhtun/AndroidStudioProjects/Mukodo_API_RecyclerView_ChampNames(Folytatas_Main)/app/src/main/res/layout/fragment_example.xml" value="0.33" />
-      </map>
-    </option>
-  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
