@@ -8,9 +8,9 @@ import retrofit2.http.Path;
 
 public interface InterfaceForSumm {
 
-//https://eun1.api.riotgames.com/lol/summoner/v4/
-//        summoners/by-name/AsrielHUN?api_key=RGAPI-93891ff8-dbea-4061-8932-d0a5fb1b51a8
+// fix link rész ->      https://eun1.api.riotgames.com/lol/summoner/v4/
+// változó link rész ->  summoners/by-name/AsrielHUN?api_key=RGAPI-93891ff8-dbea-4061-8932-d0a5fb1b51a8
 
-    @GET("{summname}?api_key=RGAPI-8a83c906-cb1c-441e-8a1f-f3d9c59c538c")
+    @GET("{summname}?api_key=RGAPI-3c603b40-fede-47e1-a18c-87b22d7759d3")
     Call<ModelForSumm> getDataForSumm(@Path("summname") String SummName);
 }

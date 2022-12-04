@@ -26,7 +26,6 @@ public class SummInfoDeserializer {
                 modelForSummDes.profileIconId = rootJsonObjecSumm.get("profileIconId").getAsInt();
                 modelForSummDes.summonerLevel= rootJsonObjecSumm.get("summonerLevel").getAsInt();
 
-
                 return modelForSummDes;
             }
         };

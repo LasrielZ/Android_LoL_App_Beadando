@@ -7,6 +7,4 @@ public class JsonChampionsResponse {
     public String format;
     public String version;
     public List<ChampionData> champions;
-
-
 }

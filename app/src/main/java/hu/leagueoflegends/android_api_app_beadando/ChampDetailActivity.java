@@ -2,8 +2,6 @@ package hu.leagueoflegends.android_api_app_beadando;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,8 +12,6 @@ import com.bumptech.glide.Glide;
 
 public class ChampDetailActivity extends AppCompatActivity {
 
-    Context xContext;
-
     ImageView imageV;
     TextView nameTV;
     TextView titleTV;
@@ -25,7 +21,7 @@ public class ChampDetailActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.example_activity);
+        setContentView(R.layout.champion_detail_activity);
 
         String name = getIntent().getStringExtra("NAME");
         String title = getIntent().getStringExtra("TITLE");

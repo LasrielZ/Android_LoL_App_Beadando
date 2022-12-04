@@ -1,5 +1,6 @@
 package hu.leagueoflegends.android_api_app_beadando.summinfo;
 
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,10 +28,12 @@ public class SummInfo_Activity extends AppCompatActivity {
     TextView txtSummLvl;
     TextView txtSummServer;
     ImageView imgSummIcon;
+    ImageView soloEmblem;
     String summNamesData;
     String serverChoice;
-    String summonerJSON;
     TextView soloPlacement;
+    TextView flexPlacement;
+    ImageView flexEmblem;
 
     private AdapterForSumm adapterForSumm;
 
@@ -47,18 +50,21 @@ public class SummInfo_Activity extends AppCompatActivity {
         txtSummServer = findViewById(R.id.SummServer_textView);
         imgSummIcon = findViewById(R.id.SummIcon_imageView);
         soloPlacement = findViewById(R.id.SoloPlacement_textView);
-
-        //imgCode = findViewById(R.id.ImgCode_textView);
+        soloEmblem = findViewById(R.id.SoloIcon_imageView);
+        flexPlacement = findViewById(R.id.FlexPlacement_textView);
+        flexEmblem = findViewById(R.id.flexIcon_imageView);
 
         txtSummServer.setText(getIntent().getStringExtra("SERVERCHOICE"));
 
         summNamesData = getIntent().getStringExtra("NAMEDATA");
+
         adapterForSumm.setSummonerNames(summNamesData);
 
+        AsyncTaskRunnerSolo tierTaskSolo = new AsyncTaskRunnerSolo();
+        tierTaskSolo.execute();
 
-        AsyncTaskRunner tierTask = new AsyncTaskRunner();
-        tierTask.execute();
-
+        AsyncTaskRunnerFlex tierTaskFlex = new AsyncTaskRunnerFlex();
+        tierTaskFlex.execute();
     }
 
     @Override
@@ -79,11 +85,7 @@ public class SummInfo_Activity extends AppCompatActivity {
                 txtSummName.setText(resultSumm.name);
                 txtSummLvl.setText("level: " + String.valueOf(resultSumm.summonerLevel));
 
-                //imgCode.setText(String.valueOf(resultSumm.profileIconId));
-                //serverChoiceData = String.valueOf(resultSumm.profileIconId);
-
                 Glide.with(SummInfo_Activity.this).load("https://ddragon.leagueoflegends.com/cdn/12.22.1/img/profileicon/" + String.valueOf(resultSumm.profileIconId) + ".png").into(imgSummIcon);
-
 
             }
 
@@ -95,34 +97,14 @@ public class SummInfo_Activity extends AppCompatActivity {
     }
 
 
-    private class AsyncTaskRunner extends AsyncTask<Void, Void, String> {
-        @Override
-        protected String doInBackground(Void... voids) {
-            String asd = Tier.UNRANKED.toString();
-            try {
-                asd = rankedPlacement().toString();
+//SOLO RANKED START
+    //SOLO RANKED START
 
-                Log.d("SummInfoActivity: ", "tier: " + asd);
-            } catch (Exception e) {
-                e.printStackTrace();
+    public String soloRankedPlacement(){
 
-            }
-            return asd;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            soloPlacement.setText(s);
-        }
-    }
-
-
-    public String rankedPlacement(){
         serverChoice = getIntent().getStringExtra("SERVERCHOICE");
 
-        Orianna.setRiotAPIKey("RGAPI-8a83c906-cb1c-441e-8a1f-f3d9c59c538c");
+        Orianna.setRiotAPIKey("RGAPI-3c603b40-fede-47e1-a18c-87b22d7759d3");
 
         if (serverChoice == "euw1"){
             Orianna.setDefaultRegion(Region.EUROPE_WEST);
@@ -137,4 +119,142 @@ public class SummInfo_Activity extends AppCompatActivity {
         return summoner.getLeaguePosition(Queue.RANKED_SOLO).getTier().toString();
     }
 
+    private class AsyncTaskRunnerSolo extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... voids) {
+            String soloTier = "";
+            try {
+                soloTier = soloRankedPlacement();
+
+                Log.d("SoloTier - ", "tier: " + soloTier);
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+            return soloTier;
+        }
+
+        @Override
+        protected void onPostExecute(String rangReceived) {
+            super.onPostExecute(rangReceived);
+
+            soloPlacement.setText(rangReceived);
+
+            switch (soloPlacement.getText().toString()){
+                case "IRON":
+                    soloEmblem.setImageResource(R.drawable.emblem_iron);
+                    break;
+                case "BRONZE":
+                    soloEmblem.setImageResource(R.drawable.emblem_bronze);
+                    break;
+                case "SILVER":
+                    soloEmblem.setImageResource(R.drawable.emblem_silver);
+                    break;
+                case "GOLD":
+                    soloEmblem.setImageResource(R.drawable.emblem_gold);
+                    break;
+                case "PLATINUM":
+                    soloEmblem.setImageResource(R.drawable.emblem_platinum);
+                    break;
+                case "DIAMOND":
+                    soloEmblem.setImageResource(R.drawable.emblem_diamond);
+                    break;
+                case "MASTER":
+                    soloEmblem.setImageResource(R.drawable.emblem_master);
+                    break;
+                case "GRANDMASTER":
+                    soloEmblem.setImageResource(R.drawable.emblem_grandmaster);
+                    break;
+                case "CHALLENGER":
+                    soloEmblem.setImageResource(R.drawable.emblem_challenger);
+                    break;
+                case "":
+                    soloEmblem.setImageResource(R.drawable.emblem_unranked);
+                    soloPlacement.setText("UNRANKED");
+                    break;
+            }
+        }
+    }
+
+    //SOLO RANKED END
+    //SOLO RANKED END
+
+
+    //FLEX RANKED START
+    //FLEX RANKED START
+
+    public String flexRankedPlacement(){
+        serverChoice = getIntent().getStringExtra("SERVERCHOICE");
+
+        Orianna.setRiotAPIKey("RGAPI-3c603b40-fede-47e1-a18c-87b22d7759d3");
+
+        if (serverChoice == "euw1"){
+            Orianna.setDefaultRegion(Region.EUROPE_WEST);
+        }else if (serverChoice == "na1"){
+            Orianna.setDefaultRegion(Region.NORTH_AMERICA);
+        }else {
+            Orianna.setDefaultRegion(Region.EUROPE_NORTH_EAST);
+        }
+
+        Summoner summoner = Orianna.summonerNamed(summNamesData).get();
+
+        return summoner.getLeaguePosition(Queue.RANKED_FLEX).getTier().toString();
+    }
+
+    private class AsyncTaskRunnerFlex extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... voids) {
+            String flexTier = "";
+            try {
+                flexTier = flexRankedPlacement();
+
+                Log.d("FlexTier - ", "tier: " + flexTier);
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+            return flexTier;
+        }
+
+        @Override
+        protected void onPostExecute(String rangReceived) {
+            super.onPostExecute(rangReceived);
+
+            flexPlacement.setText(rangReceived);
+
+            switch (flexPlacement.getText().toString()){
+                case "IRON":
+                    flexEmblem.setImageResource(R.drawable.emblem_iron);
+                    break;
+                case "BRONZE":
+                    flexEmblem.setImageResource(R.drawable.emblem_bronze);
+                    break;
+                case "SILVER":
+                    flexEmblem.setImageResource(R.drawable.emblem_silver);
+                    break;
+                case "GOLD":
+                    flexEmblem.setImageResource(R.drawable.emblem_gold);
+                    break;
+                case "PLATINUM":
+                    flexEmblem.setImageResource(R.drawable.emblem_platinum);
+                    break;
+                case "DIAMOND":
+                    flexEmblem.setImageResource(R.drawable.emblem_diamond);
+                    break;
+                case "MASTER":
+                    flexEmblem.setImageResource(R.drawable.emblem_master);
+                    break;
+                case "GRANDMASTER":
+                    flexEmblem.setImageResource(R.drawable.emblem_grandmaster);
+                    break;
+                case "CHALLENGER":
+                    flexEmblem.setImageResource(R.drawable.emblem_challenger);
+                    break;
+                case "":
+                    flexEmblem.setImageResource(R.drawable.emblem_unranked);
+                    flexPlacement.setText("UNRANKED");
+                    break;
+            }
+        }
+    }
 }

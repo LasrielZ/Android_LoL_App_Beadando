@@ -46,11 +46,7 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
 
         holder.title.setText(champsList.get(position).getTitle());
         holder.champName.setText(champsList.get(position).getName());
-        //holder.imgData.setText(champsList.get(position).getImages().getFull());
 
-
-
-        //GLIDE for images
         Glide.with(mContext)
                 .load("https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/" + champsList.get(position).getImages().getFull())
                 .into(holder.img);
@@ -66,7 +62,6 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
 
         OnItemClickListener onItemClickListener;
 
-        //TextView imgData;
         TextView champName;
         TextView title;
         ImageView img;
@@ -74,7 +69,6 @@ public class AdapterForRecyclerView extends RecyclerView.Adapter<AdapterForRecyc
         public MyViewHolder(@NonNull View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
 
-            //imgData = itemView.findViewById(R.id.textView_imageData);
             champName = itemView.findViewById(R.id.textView2);
             title = itemView.findViewById(R.id.textView3);
             img = itemView.findViewById(R.id.imageView);

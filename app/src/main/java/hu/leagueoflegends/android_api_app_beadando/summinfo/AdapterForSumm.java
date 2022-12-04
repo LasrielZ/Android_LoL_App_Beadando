@@ -32,7 +32,6 @@ public class AdapterForSumm {
         call.enqueue(callback);
     }
 
-
     private Retrofit buildRetrofitSumm(){
         Gson gson = SummInfoDeserializer.createGsonBuilderSumm()
                 .create();

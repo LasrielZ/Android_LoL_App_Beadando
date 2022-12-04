@@ -11,34 +11,24 @@ public class ChampionData {
     public String name;
     public String title;
     public String blurb;
-    public Info info;
-    //public Image image;
 
     @SerializedName("image")
     private Images images;
 
     public ArrayList<String> tags;
     public String partype;
-    public Stats stats;
 
-    //CONST
-
-    public ChampionData(String version, String id, String key, String name, String title, String blurb, Info info, Images images, ArrayList<String> tags, String partype, Stats stats) {
+    public ChampionData(String version, String id, String key, String name, String title, String blurb, Images images, ArrayList<String> tags, String partype) {
         this.version = version;
         this.id = id;
         this.key = key;
         this.name = name;
         this.title = title;
         this.blurb = blurb;
-        this.info = info;
         this.images = images;
         this.tags = tags;
         this.partype = partype;
-        this.stats = stats;
     }
-
-
-    //GETTERS
 
     public String getVersion() {
         return version;
@@ -64,10 +54,6 @@ public class ChampionData {
         return blurb;
     }
 
-    public Info getInfo() {
-        return info;
-    }
-
     public Images getImages() {
         return images;
     }
@@ -80,7 +66,4 @@ public class ChampionData {
         return partype;
     }
 
-    public Stats getStats() {
-        return stats;
-    }
 }

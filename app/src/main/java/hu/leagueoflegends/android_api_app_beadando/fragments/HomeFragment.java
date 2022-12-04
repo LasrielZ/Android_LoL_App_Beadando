@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,23 +12,13 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.google.android.material.textfield.TextInputLayout;
-
-import hu.leagueoflegends.android_api_app_beadando.ChampDetailActivity;
 import hu.leagueoflegends.android_api_app_beadando.R;
-import hu.leagueoflegends.android_api_app_beadando.summinfo.AdapterForSumm;
-import hu.leagueoflegends.android_api_app_beadando.summinfo.InterfaceForSumm;
 import hu.leagueoflegends.android_api_app_beadando.summinfo.SummInfo_Activity;
 
 public class HomeFragment extends Fragment {
 
+
     View view;
-
-
-    TextInputLayout textInputLayout;
-    AutoCompleteTextView autoCompleteTextView;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,25 +26,26 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
         String[] servers = new String[] {"eun1", "euw1", "na1"};
+
         final ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line,
                 servers);
 
-        AutoCompleteTextView autoCompleteTextView = view.findViewById(R.id.autoCompleteTxtView);
+        AutoCompleteTextView autoCompleteTextView = view.findViewById(R.id.listItems_AutoCompleteTxtView);
         autoCompleteTextView.setAdapter(adapter);
 
-        EditText editText = view.findViewById(R.id.edtTxtView);
-        Button button = view.findViewById(R.id.btnSearch);
-        TextInputLayout textInputLayout = view.findViewById(R.id.txtInputLayout);
-        AutoCompleteTextView autoCompleteTextView1 = view.findViewById(R.id.autoCompleteTxtView);
+        EditText summSearchEditText = view.findViewById(R.id.edtTxtView);
+        Button searchButton = view.findViewById(R.id.btnSearch);
+        AutoCompleteTextView listItem_txtView = view.findViewById(R.id.listItems_AutoCompleteTxtView);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(getActivity(), SummInfo_Activity.class);
-                intent.putExtra("SERVERCHOICE", autoCompleteTextView1.getText().toString());
-                intent.putExtra("NAMEDATA", editText.getText().toString());
+                intent.putExtra("SERVERCHOICE", listItem_txtView.getText().toString());
+                intent.putExtra("NAMEDATA", summSearchEditText.getText().toString());
+
                 startActivity(intent);
             }
         });

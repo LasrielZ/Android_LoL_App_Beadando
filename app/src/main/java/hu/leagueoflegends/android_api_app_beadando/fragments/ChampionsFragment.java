@@ -7,11 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,7 +39,6 @@ public class ChampionsFragment extends Fragment implements AdapterForRecyclerVie
     private List<String> championNames;
 
     private TextView responseTextView;
-    private ListView championListView;
     private ArrayAdapter<String> arrayAdapter;
 
     RecyclerView recyclerView;
@@ -49,14 +51,10 @@ public class ChampionsFragment extends Fragment implements AdapterForRecyclerVie
 
         recyclerView = view.findViewById(R.id.recyclerView);
         champDataList = new ArrayList<>();
-
         lolAdapter = new Adapter();
         championNames = new ArrayList<>();
-
         responseTextView = view.findViewById(R.id.responseTextView);
-        //championListView = view.findViewById(R.id.championListView);
         arrayAdapter = new ArrayAdapter<String>(getActivity(),  android.R.layout.simple_list_item_1, android.R.id.text1, championNames);
-        //championListView.setAdapter(arrayAdapter);
 
         return view;
     }
@@ -70,25 +68,23 @@ public class ChampionsFragment extends Fragment implements AdapterForRecyclerVie
             public void onResponse(Call<JsonChampionsResponse> call, Response<JsonChampionsResponse> response) {
 
                 if(response.isSuccessful()) {
-                    JsonChampionsResponse result = response.body();
 
+                    JsonChampionsResponse result = response.body();
                     championNames.clear();
                     champDataList.clear();
+
                     for (ChampionData champion : result.champions) {
                         championNames.add(champion.name);
                         champDataList.add(champion);
                     }
                     arrayAdapter.notifyDataSetChanged();
-
                     responseTextView.setText("version: " + result.version);
-
                     PutDataIntoRecyclerView(champDataList);
 
                 } else {
                     responseTextView.setText("hiba történt, státuszkód: " + response.code());
                 }
             }
-
             @Override
             public void onFailure(Call<JsonChampionsResponse> call, Throwable t) {
 
@@ -116,7 +112,6 @@ public class ChampionsFragment extends Fragment implements AdapterForRecyclerVie
         intent.putExtra("NAME", champDataList.get(position).getName());
         intent.putExtra("PICTURE","https://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + champDataList.get(position).getName() + "_0.jpg");
         intent.putExtra("STORY", champDataList.get(position).getBlurb());
-
 
         startActivity(intent);
     }

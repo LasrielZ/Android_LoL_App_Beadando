@@ -38,7 +38,6 @@ public class Deserializer {
                 while (dataKeys.hasNext()) {
                     String key = dataKeys.next();
                     if (dataJsonObject.get(key) instanceof JsonObject) {
-                        // do something with jsonObject here
                         ChampionData champion = gson.fromJson(dataJsonObject.get(key), ChampionData.class);
                         champions.add(champion);
                     }

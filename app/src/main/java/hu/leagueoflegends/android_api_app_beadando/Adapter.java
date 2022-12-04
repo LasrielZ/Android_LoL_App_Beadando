@@ -2,6 +2,9 @@ package hu.leagueoflegends.android_api_app_beadando;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
+import hu.leagueoflegends.android_api_app_beadando.models.ChampionData;
 import hu.leagueoflegends.android_api_app_beadando.models.JsonChampionsResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
